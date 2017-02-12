@@ -1,3 +1,17 @@
+//! `Step` is a trait that allows for stepping numeric values and makes
+//! writing functions that are generic over numeric types easier.
+//!
+//! # Example
+//!
+//! ```
+//! use step::Step;
+//!
+//! let number = 42;
+//! println!("The number is: {}", number);
+//! println!("The previous number is: {}", number.prev().unwrap());
+//! println!("The next number is: {}", number.next().unwrap());
+//! ```
+
 mod std_impls;
 
 /// Types that can be incremented or decremented by a unit value or a
