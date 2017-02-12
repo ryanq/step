@@ -3,4 +3,16 @@ name = "step"
 version = "0.1.0"
 authors = ["Ryan Quattlebaum <ryan.quattlebaum@icloud.com>"]
 
+description = "A trait that allows for stepping numeric types."
+keywords = ["integer", "step"]
+
+readme = "README.md"
+license = "MIT/Apache-2.0"
+
+repository = "https://github.com/ryanq/step"
+documentation = "https://docs.rs/step/0.1.0/step/"
+
+[badges]
+travis-ci = { repository = "ryanq/step" }
+
 [dependencies]
