@@ -3,19 +3,19 @@ use Step;
 macro_rules! primitive_impl {
     ($t:ty) => {
         impl Step for $t {
-            fn step(&self) -> Option<Self> {
+            fn next(&self) -> Option<Self> {
                 self.checked_add(1 as $t)
             }
 
-            fn step_by(&self, by: &Self) -> Option<Self> {
+            fn next_by(&self, by: &Self) -> Option<Self> {
                 self.checked_add(*by)
             }
 
-            fn step_back(&self) -> Option<Self> {
+            fn prev(&self) -> Option<Self> {
                 self.checked_sub(1 as $t)
             }
 
-            fn step_back_by(&self, by: &Self) -> Option<Self> {
+            fn prev_by(&self, by: &Self) -> Option<Self> {
                 self.checked_sub(*by)
             }
         }
