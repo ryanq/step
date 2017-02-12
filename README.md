@@ -33,10 +33,10 @@ or implement it on your own types:
 ```rust
 let number = 42;
 
-assert_eq!(number.step(), 43);
-assert_eq!(number.step_by(&3), 45);
-assert_eq!(number.step_back(), 41);
-assert_eq!(number.step_back_by(&3), 39);
+assert_eq!(number.next(), 43);
+assert_eq!(number.next_by(&3), 45);
+assert_eq!(number.prev(), 41);
+assert_eq!(number.prev_by(&3), 39);
 ```
 
 ```rust
@@ -45,10 +45,10 @@ struct Foo {
 }
 
 impl Step for Foo {
-    fn step(&self) -> Self { Foo { bar: self.bar + 1 } }
-    fn step_by(&self, by: &Self) -> Self { Foo { bar: self.bar + *by } }
-    fn step_back(&self) -> Self { Foo { bar: self.bar - 1 } }
-    fn step_back_by(&self, by: &Self) -> Self { Foo { bar: self.bar - *by } }
+    fn next(&self) -> Self { Foo { bar: self.bar + 1 } }
+    fn next_by(&self, by: &Self) -> Self { Foo { bar: self.bar + *by } }
+    fn prev(&self) -> Self { Foo { bar: self.bar - 1 } }
+    fn prev_by(&self, by: &Self) -> Self { Foo { bar: self.bar - *by } }
 }
 ```
 
@@ -56,4 +56,4 @@ impl Step for Foo {
 [travis-ci]: https://travis-ci.org/ryanq/step
 [crates.io-badge]: https://img.shields.io/crates/v/step.svg
 [crates.io]: https://crates.io/crates/step
-[docs.rs]: https://docs.rs/step/0.2.0/step/
+[docs.rs]: https://docs.rs/step/0.1.0/step/
