@@ -18,6 +18,14 @@ macro_rules! primitive_impl {
             fn prev_by(&self, by: &Self) -> Option<Self> {
                 self.checked_sub(*by)
             }
+
+            fn steps_to(&self, value: &Self) -> Self {
+                if self > value {
+                    self.checked_sub(*value).and_then(|x| x.next()).unwrap()
+                } else {
+                    value.checked_sub(*self).and_then(|x| x.next()).unwrap()
+                }
+            }
         }
     }
 }
