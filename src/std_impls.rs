@@ -21,9 +21,9 @@ macro_rules! primitive_impl {
 
             fn steps_to(&self, value: &Self) -> Self {
                 if self > value {
-                    self.checked_sub(*value).and_then(|x| x.next()).unwrap()
+                    self.checked_sub(*value).unwrap()
                 } else {
-                    value.checked_sub(*self).and_then(|x| x.next()).unwrap()
+                    value.checked_sub(*self).unwrap()
                 }
             }
         }
