@@ -19,11 +19,11 @@ macro_rules! primitive_impl {
                 self.checked_sub(*by)
             }
 
-            fn steps_to(&self, value: &Self) -> Self {
+            fn steps_to(&self, value: &Self) -> usize {
                 if self > value {
-                    self.checked_sub(*value).unwrap()
+                    self.checked_sub(*value).unwrap().into()
                 } else {
-                    value.checked_sub(*self).unwrap()
+                    value.checked_sub(*self).unwrap().into()
                 }
             }
         }
