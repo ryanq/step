@@ -29,5 +29,5 @@ pub trait Step: Sized {
     ///
     /// The return value will be the number of steps between the two
     /// values (i.e. it will always be a positive number).
-    fn steps_to(&self, value: &Self) -> Self;
+    fn steps_to(&self, value: &Self) -> usize;
 }
